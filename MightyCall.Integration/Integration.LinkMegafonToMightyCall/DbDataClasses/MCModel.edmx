@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="INFRAVISORModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="IV_CallRecord">
+          <Key>
+            <PropertyRef Name="pkID" />
+          </Key>
+          <Property Name="pkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrgName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="OrgNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrgLine" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DestName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="DestNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DestLine" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="Direction" Type="tinyint" Nullable="false" />
+          <Property Name="Duration" Type="int" Nullable="false" />
+          <Property Name="MediaFileName" Type="nvarchar" MaxLength="260" />
+          <Property Name="RawParty" Type="nvarchar" MaxLength="1965" Nullable="false" />
+          <Property Name="Read" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="4000" />
+          <Property Name="SessionID" Type="uniqueidentifier" />
+          <Property Name="fkFolder" Type="int" />
+          <Property Name="FileSize" Type="bigint" />
+          <Property Name="Importance" Type="tinyint" Nullable="false" />
+          <Property Name="QueueID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityContainer Name="INFRAVISORModelStoreContainer">
+          <EntitySet Name="IV_CallRecord" EntityType="Self.IV_CallRecord" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="INFRAVISORModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="IV_CallRecord">
+          <Key>
+            <PropertyRef Name="pkID" />
+          </Key>
+          <Property Name="pkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrgName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrgNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrgLine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DestName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DestNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DestLine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Direction" Type="Byte" Nullable="false" />
+          <Property Name="Duration" Type="Int32" Nullable="false" />
+          <Property Name="MediaFileName" Type="String" MaxLength="260" FixedLength="false" Unicode="true" />
+          <Property Name="RawParty" Type="String" MaxLength="1965" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Read" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="SessionID" Type="Guid" />
+          <Property Name="fkFolder" Type="Int32" />
+          <Property Name="FileSize" Type="Int64" />
+          <Property Name="Importance" Type="Byte" Nullable="false" />
+          <Property Name="QueueID" Type="Guid" />
+        </EntityType>
+        <EntityContainer Name="INFRAVISOR" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="IV_CallRecord" EntityType="Self.IV_CallRecord" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="INFRAVISORModelStoreContainer" CdmEntityContainer="INFRAVISOR">
+          <EntitySetMapping Name="IV_CallRecord">
+            <EntityTypeMapping TypeName="INFRAVISORModel.IV_CallRecord">
+              <MappingFragment StoreEntitySet="IV_CallRecord">
+                <ScalarProperty Name="pkID" ColumnName="pkID" />
+                <ScalarProperty Name="OrgName" ColumnName="OrgName" />
+                <ScalarProperty Name="OrgNumber" ColumnName="OrgNumber" />
+                <ScalarProperty Name="OrgLine" ColumnName="OrgLine" />
+                <ScalarProperty Name="DestName" ColumnName="DestName" />
+                <ScalarProperty Name="DestNumber" ColumnName="DestNumber" />
+                <ScalarProperty Name="DestLine" ColumnName="DestLine" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="Direction" ColumnName="Direction" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="MediaFileName" ColumnName="MediaFileName" />
+                <ScalarProperty Name="RawParty" ColumnName="RawParty" />
+                <ScalarProperty Name="Read" ColumnName="Read" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="fkFolder" ColumnName="fkFolder" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="Importance" ColumnName="Importance" />
+                <ScalarProperty Name="QueueID" ColumnName="QueueID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

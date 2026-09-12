@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.37314.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crmPark.Integration.SpeechAnalysis", "crmPark.Integration.SpeechAnalysis\crmPark.Integration.SpeechAnalysis.csproj", "{F9D45ABD-A2CF-42DC-B637-15A1D97DA039}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Comagic.Integration", "Comagic.Integration", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MightyCall.Integration", "MightyCall.Integration", "{AF7BC26B-7B24-4A1C-8786-422E21F0B869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crmPark.Integration.SpeechAnalysis", "Comagic.Integration\Integration.SpeechAnalysis\crmPark.Integration.SpeechAnalysis.csproj", "{1788D56C-E691-421D-B332-2BFA1DA194F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crmPark.Blacklist.Statistics", "MightyCall.Integration\Blacklist.Statistics\crmPark.Blacklist.Statistics.csproj", "{A7F6C6AE-A60D-419F-8E4B-1C6378A2D288}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crmPark.Integration.External", "MightyCall.Integration\Integration.BlackList\crmPark.Integration.External.csproj", "{30D1A858-AFE3-475A-B95D-2734D236E494}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crmPark.Integration.LinkMegafonToMightyCall", "MightyCall.Integration\Integration.LinkMegafonToMightyCall\crmPark.Integration.LinkMegafonToMightyCall.csproj", "{CA76152B-3912-42CC-BCD2-CDD58CE3DE41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +21,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F9D45ABD-A2CF-42DC-B637-15A1D97DA039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9D45ABD-A2CF-42DC-B637-15A1D97DA039}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9D45ABD-A2CF-42DC-B637-15A1D97DA039}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9D45ABD-A2CF-42DC-B637-15A1D97DA039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1788D56C-E691-421D-B332-2BFA1DA194F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1788D56C-E691-421D-B332-2BFA1DA194F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1788D56C-E691-421D-B332-2BFA1DA194F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1788D56C-E691-421D-B332-2BFA1DA194F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7F6C6AE-A60D-419F-8E4B-1C6378A2D288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F6C6AE-A60D-419F-8E4B-1C6378A2D288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F6C6AE-A60D-419F-8E4B-1C6378A2D288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F6C6AE-A60D-419F-8E4B-1C6378A2D288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30D1A858-AFE3-475A-B95D-2734D236E494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D1A858-AFE3-475A-B95D-2734D236E494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D1A858-AFE3-475A-B95D-2734D236E494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30D1A858-AFE3-475A-B95D-2734D236E494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA76152B-3912-42CC-BCD2-CDD58CE3DE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA76152B-3912-42CC-BCD2-CDD58CE3DE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA76152B-3912-42CC-BCD2-CDD58CE3DE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA76152B-3912-42CC-BCD2-CDD58CE3DE41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1788D56C-E691-421D-B332-2BFA1DA194F4} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{A7F6C6AE-A60D-419F-8E4B-1C6378A2D288} = {AF7BC26B-7B24-4A1C-8786-422E21F0B869}
+		{30D1A858-AFE3-475A-B95D-2734D236E494} = {AF7BC26B-7B24-4A1C-8786-422E21F0B869}
+		{CA76152B-3912-42CC-BCD2-CDD58CE3DE41} = {AF7BC26B-7B24-4A1C-8786-422E21F0B869}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {08411402-9E53-49D8-BD9F-487A0F315105}

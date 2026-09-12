@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MegaFonDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Megafon_calls">
+          <Key>
+            <PropertyRef Name="call_id" />
+          </Key>
+          <Property Name="call_id" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="call_type" Type="nvarchar" MaxLength="8" />
+          <Property Name="call_status" Type="nvarchar" MaxLength="16" />
+          <Property Name="client" Type="nvarchar" MaxLength="64" />
+          <Property Name="diversion" Type="nvarchar" MaxLength="64" />
+          <Property Name="destination" Type="nvarchar" MaxLength="256" />
+          <Property Name="user_login" Type="nvarchar" MaxLength="128" />
+          <Property Name="user_name" Type="nvarchar" MaxLength="64" />
+          <Property Name="group_name" Type="nvarchar" MaxLength="128" />
+          <Property Name="start" Type="nvarchar" MaxLength="128" />
+          <Property Name="wait" Type="int" />
+          <Property Name="duration" Type="int" />
+          <Property Name="record" Type="nvarchar" MaxLength="512" />
+          <Property Name="record_path" Type="nvarchar" MaxLength="512" />
+          <Property Name="rating" Type="int" />
+          <Property Name="is_processed" Type="bit" />
+          <Property Name="call_external_id" Type="uniqueidentifier" />
+          <Property Name="call_guid_crm" Type="uniqueidentifier" />
+          <Property Name="is_processed_crm" Type="bit" />
+          <Property Name="account_id" Type="uniqueidentifier" />
+          <Property Name="is_external" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MegaFonDatabaseModelStoreContainer">
+          <EntitySet Name="Megafon_calls" EntityType="Self.Megafon_calls" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MegaFonDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MegaFonDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Megafon_calls" EntityType="MegaFonDatabaseModel.Megafon_calls" />
+        </EntityContainer>
+        <EntityType Name="Megafon_calls">
+          <Key>
+            <PropertyRef Name="call_id" />
+          </Key>
+          <Property Name="call_id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="call_type" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="call_status" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="client" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="diversion" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="destination" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="user_login" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="user_name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="group_name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="start" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="wait" Type="Int32" />
+          <Property Name="duration" Type="Int32" />
+          <Property Name="record" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="record_path" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="rating" Type="Int32" />
+          <Property Name="is_processed" Type="Boolean" />
+          <Property Name="call_external_id" Type="Guid" />
+          <Property Name="call_guid_crm" Type="Guid" />
+          <Property Name="is_processed_crm" Type="Boolean" />
+          <Property Name="is_external" Type="Boolean" Nullable="false" />
+          <Property Name="account_id" Type="Guid" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MegaFonDatabaseModelStoreContainer" CdmEntityContainer="MegaFonDatabaseEntities">
+          <EntitySetMapping Name="Megafon_calls">
+            <EntityTypeMapping TypeName="MegaFonDatabaseModel.Megafon_calls">
+              <MappingFragment StoreEntitySet="Megafon_calls">
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="is_external" ColumnName="is_external" />
+                <ScalarProperty Name="is_processed_crm" ColumnName="is_processed_crm" />
+                <ScalarProperty Name="call_guid_crm" ColumnName="call_guid_crm" />
+                <ScalarProperty Name="call_external_id" ColumnName="call_external_id" />
+                <ScalarProperty Name="is_processed" ColumnName="is_processed" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="record_path" ColumnName="record_path" />
+                <ScalarProperty Name="record" ColumnName="record" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="wait" ColumnName="wait" />
+                <ScalarProperty Name="start" ColumnName="start" />
+                <ScalarProperty Name="group_name" ColumnName="group_name" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_login" ColumnName="user_login" />
+                <ScalarProperty Name="destination" ColumnName="destination" />
+                <ScalarProperty Name="diversion" ColumnName="diversion" />
+                <ScalarProperty Name="client" ColumnName="client" />
+                <ScalarProperty Name="call_status" ColumnName="call_status" />
+                <ScalarProperty Name="call_type" ColumnName="call_type" />
+                <ScalarProperty Name="call_id" ColumnName="call_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
