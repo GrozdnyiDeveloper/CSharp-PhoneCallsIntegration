@@ -1,4 +1,4 @@
-# Интеграция CRM с внешними телефониями Comagic и MightyCall
+# Интеграция CRM с внешними телефониями MigthyCall, Comagic и Megafon
 В данном репозитории представлены примеры доработок интеграций CRM с различными телефониями (MigthyCall, Comagic и Megafon). 
 
 ## Comagic.Integration - Содержит проекты интеграции CRM с телефонией Comagic
